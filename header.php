@@ -9,6 +9,9 @@
  * @package Maghreb
  */
 
+if( ! defined( 'ABSPATH' ) ) {
+	exit;
+ }
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -57,3 +60,4 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+	<div id="content" class="site-content">
