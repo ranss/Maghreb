@@ -969,13 +969,51 @@ textarea {
 }
 
 
+/*
+Maghreb styles
+*/
 
+:root {
+    --background-main: #d0c4aa;
+    --dark-green: #0b0c0c; /* Dark Green */
+    --rich-red: #9c2a2a;   /* Rich Red */
+    --warm-gold: #c79e56;  /* Warm Gold */
+    --deep-green: #4b6b3c; /* Deep Green */
+    --sky-blue: #58a6d2;   /* Sky Blue */
+    --warm-beige: #f4e1b1; /* Warm Beige */
+
+    /* Font Families */
+    --font-heading: "Merriweather", serif;
+    --font-body: "Roboto", sans-serif;
+
+    /* Font Sizes */
+    --font-size-base: 16px; /* Default body font size */
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.75rem;
+    --font-size-h4: 1.5rem;
+    --font-size-h5: 1.25rem;
+    --font-size-h6: 1rem;
+
+    /* Font Weights */
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    /* Line Heights */
+    --line-height-base: 1.6;
+    --line-height-heading: 1.3;
+}
 
 body {
-    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--background-main);
+    /* background-color: #f9f9f9; */
+    color: var(--dark-green);
+    font-family: "Roboto", serif;
+
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
 }
 
 /* Site Wrapper */
@@ -987,10 +1025,12 @@ body {
 
 /* Header */
 .site-header {
-    background-color: #dbd0bf;
+    background-color: var(--deep-green);
+    /* background-color: #dbd0bf; */
     color: #fff;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .site-title {
@@ -1000,7 +1040,7 @@ body {
 
 .site-title a {
     text-decoration: none;
-    color: #5c6c5d;
+    color: var(--warm-beige);
 }
 
 .site-description {
@@ -1017,17 +1057,12 @@ body {
     box-sizing: border-box;
 }
 
-body {
-	background: #8e2a1b;
-	color: #101916;
-}
-
 /* Sidebar on the Left */
 #secondary {
     width: 25%; /* Adjust as needed */
     padding: 20px;
 	float: left;
-	background-color: #58685c;
+	background-color: var(--rich-red);
 	border-radius: 10px 0 0 10px;
 }
 
@@ -1057,7 +1092,38 @@ body {
     color: #0073aa;
 }
 
-/* Main Content on the Right */
+/* Headings (h1 to h6) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-bold);
+    margin-top: 1em;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+}
+
+h5 {
+    font-size: var(--font-size-h5);
+}
+
+h6 {
+    font-size: var(--font-size-h6);
+}
+
 #primary {
     width: 75%; /* Adjust as needed */
     padding: 20px;
@@ -1076,12 +1142,15 @@ body {
     margin-bottom: 20px;
 }
 
+#colophon {
+    box-shadow: 0 -10px 8px rgba(0, 0, 0, 0.1), 0 -5px 20px rgba(0, 0, 0, 0.2);
+}
+
 /* Footer */
 .site-footer {
     background-color: #172521;
     color: #fff;
     text-align: center;
-    padding: 10px 20px;
     font-size: 0.9rem;
 }
 
@@ -1098,8 +1167,10 @@ body {
 	margin: 100px auto;
 	width: 1200px;
 	background-color: #dbd0bf;
-	border: 5px solid #dbd0bf;
+    background-color: #fff;
+	border: 5px solid #fff;
   	border-radius: 10px 0 0 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Base link styles */
@@ -1134,3 +1205,517 @@ body {
   #primary a:hover, a:focus {
 	color: #101916;
   }
+
+  
+  /* Style the comments area container */
+.comments-area {
+    margin-top: 40px;
+}
+
+/* Style the title */
+.comments-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--deep-green); /* WordPress blue */
+    padding-bottom: 5px;
+}
+
+/* Style the comment list */
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style individual comments */
+.comment {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: var(--sky-blue);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the comment author */
+.comment-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment-author .avatar {
+    border-radius: 50%; /* Circular avatar */
+    margin-right: 10px;
+    border: 2px solid #ddd;
+}
+
+.comment-author .fn {
+    font-weight: bold;
+    color: #0073aa; /* WordPress blue for links */
+}
+
+.comment-author .says {
+    color: #666;
+    margin-left: 5px;
+}
+
+/* Style the comment metadata */
+.comment-metadata {
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.comment-metadata a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.comment-metadata a:hover {
+    text-decoration: underline;
+}
+
+/* Style the comment content */
+.comment-content {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Style the reply link */
+.reply .comment-reply-link {
+    background-color: #0073aa;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.reply .comment-reply-link {
+    background-color: #a46025;
+    color: #fff !important;
+}
+
+.reply .comment-reply-link:hover {
+    background-color: #5b6b5a;
+}
+
+/* Style the comment form */
+.comment-respond {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.comment-respond h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 5px;
+}
+
+/* Style the form fields */
+.comment-respond input[type="text"],
+.comment-respond input[type="email"],
+.comment-respond input[type="url"],
+.comment-respond textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.comment-respond input[type="text"]:focus,
+.comment-respond input[type="email"]:focus,
+.comment-respond input[type="url"]:focus,
+.comment-respond textarea:focus {
+    border-color: #0073aa;
+    outline: none;
+}
+
+/* Style the submit button */
+.comment-respond input[type="submit"] {
+    background-color: #0073aa;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.comment-respond input[type="submit"]:hover {
+    background-color: #005177;
+}
+
+/* Style the 'required' fields */
+.comment-respond .required {
+    color: #d9534f; /* Bootstrap red */
+}
+
+/* Cancel reply link */
+#cancel-comment-reply-link {
+    font-size: 0.9em;
+    color: #d9534f;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+#cancel-comment-reply-link:hover {
+    text-decoration: underline;
+}
+
+/* Main Navigation Container */
+#site-navigation {
+    background-color: var(--warm-beige);
+    padding: 10px 20px; /* Add some spacing */
+    border-bottom: 2px solid #ddd; /* Bottom border for separation */
+}
+
+/* Navigation Menu */
+.nav-menu {
+    list-style: none; /* Remove default bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Align items horizontally */
+    justify-content: center; /* Center align the menu */
+    gap: 15px; /* Add space between items */
+}
+
+/* Menu Items */
+.nav-menu li {
+    position: relative; /* For dropdowns */
+}
+
+.nav-menu li a {
+    text-decoration: none; /* Remove underline */
+    font-family: 'Lora', serif; /* Example font */
+    font-size: 16px; /* Adjust text size */
+    color: #333; /* Text color */
+    padding: 5px 10px; /* Add padding for clickable area */
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: all 0.3s ease; /* Smooth hover effects */
+}
+
+.nav-menu li a:hover {
+    background-color: #ffc107; /* Highlight on hover */
+    color: #fff; /* Text color on hover */
+}
+
+/* Responsive Menu Toggle Button */
+.menu-toggle {
+    display: none; /* Initially hidden on larger screens */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menu-toggle:hover {
+    background-color: #555;
+}
+
+
+/* Buttons */
+button, input[type="submit"], .button {
+    font-family: var(--font-body);
+    font-size: calc(var(--font-size-base) - 2px); /* Slightly smaller than body */
+    font-weight: var(--font-weight-bold);
+    color: #fff;
+    background-color: var(--deep-green);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover, .button:hover {
+    background-color: var(--warm-beige);
+    color: var(--dark-green);
+}
+
+/* Widget Area Styling */
+#secondary, .widget-area {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+#secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Styling for Individual Widgets */
+.widget {
+    /* padding: 15px; */
+}
+
+.widget-title {
+    font-family: 'Merriweather', serif; /* Font for widget titles */
+    font-size: 18px;
+    font-weight: bold;
+    color: #222; /* Dark color for titles */
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.widget a {
+    color: #0073aa; /* Link color */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.widget a:hover {
+    color: #005177; /* Darker color on hover */
+    text-decoration: underline;
+}
+
+/* Widgets with Lists (e.g., Categories, Recent Posts) */
+.widget ul {
+    list-style: none; /* Remove bullet points */
+    padding-left: 0;
+    margin: 0;
+}
+
+.widget ul li {
+    margin-bottom: 10px; /* Space between items */
+}
+
+.widget ul li a {
+    font-size: 16px;
+    color: #333; /* Text color */
+}
+
+.widget ul li a:hover {
+    color: #0073aa; /* Highlight on hover */
+}
+
+/* Search Widget */
+.widget_search .search-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.widget_search .search-field {
+    width: 70%; /* Make the input field wider */
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.widget_search .search-submit {
+    width: 25%; /* Narrow down the button */
+    padding: 8px 12px;
+    background-color: #0073aa;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* General styling for the entry meta */
+.entry-meta {
+    font-size: 14px; /* Font size for readability */
+    color: #666; /* Light gray text color */
+    margin-bottom: 20px; /* Space below the meta information */
+    font-family: 'Roboto', sans-serif; /* Font style */
+}
+
+/* Style for the "Posted on" text */
+.entry-meta .posted-on {
+    font-weight: bold; /* Bold the "Posted on" label */
+    color: #333; /* Dark color for emphasis */
+}
+
+/* Styling for the date link */
+.entry-meta .posted-on a {
+    color: #0073aa; /* WordPress standard blue color */
+    text-decoration: none; /* Remove underline */
+}
+
+.entry-meta .posted-on a:hover {
+    color: #005177; /* Darker blue on hover */
+}
+
+/* Styling for the "by" text */
+.entry-meta .byline {
+    font-style: italic; /* Italicized "by" text */
+    color: #333; /* Dark color for the "by" text */
+}
+
+/* Style for the author link */
+.entry-meta .byline .author.vcard a {
+    color: #0073aa; /* Standard link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.entry-meta .byline .author.vcard a:hover {
+    color: #005177; /* Darker blue on hover */
+}
+
+/* Additional spacing between different pieces of information */
+.entry-meta .posted-on,
+.entry-meta .byline {
+    display: inline-block;
+    margin-right: 15px; /* Space between date and author */
+}
+
+/* General styling for the entry footer */
+.entry-footer {
+    font-size: 14px; /* Standard font size for readability */
+    color: #666; /* Light gray text color for a subtle look */
+    margin-top: 20px; /* Space above the footer */
+    font-family: 'Roboto', sans-serif; /* Font style */
+}
+
+/* Styling for the category links */
+.entry-footer .cat-links {
+    font-weight: bold; /* Bold the "Posted in" label */
+    color: #333; /* Darker color for the category text */
+}
+
+.entry-footer .cat-links a {
+    color: #0073aa; /* WordPress blue color for the category link */
+    text-decoration: none; /* Remove underline */
+}
+
+.entry-footer .cat-links a:hover {
+    color: #005177; /* Darker blue on hover */
+}
+
+/* Styling for the comments link */
+.entry-footer .comments-link {
+    margin-left: 20px; /* Space between category and comment link */
+}
+
+.entry-footer .comments-link a {
+    color: #0073aa; /* WordPress blue for the comment link */
+    text-decoration: none; /* Remove underline */
+}
+
+.entry-footer .comments-link a:hover {
+    color: #005177; /* Darker blue on hover */
+}
+
+/* Hidden screen reader text for comment description */
+.entry-footer .screen-reader-text {
+    display: none; /* Keep screen-reader text hidden */
+}
+
+/* Footer Widget Area Styling */
+.footer-widgets {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 30px;
+}
+
+.footer-widgets .wp-block-heading {
+    border-bottom: 2px solid var(--warm-gold); /* Add a bottom border */
+    padding-bottom: 20px; /* Space between the text and the border */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+
+.footer-widget-area {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.footer-widget-area .widget-title {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.footer-widget-area .widget {
+    margin-bottom: 20px;
+}
+
+/* Footer navigation styling */
+.footer-navigation {
+    text-align: center; /* Center the menu in the footer */
+    margin: 40px 0; /* Add some vertical spacing */
+}
+
+.footer-navigation .footer-menu {
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex; /* Use flexbox for inline layout */
+    justify-content: center; /* Center items horizontally */
+    gap: 15px; /* Space between menu items */
+}
+
+.footer-navigation .footer-menu li {
+    display: inline; /* Inline display for list items */
+    position: relative;
+}
+
+.footer-navigation .footer-menu li::after {
+    content: "•"; /* Dot symbol */
+    margin-left: 10px; /* Space between text and dot */
+}
+
+.footer-navigation .footer-menu li:last-child::after {
+    content: ""; /* Remove the dot for the last item */
+}
+
+.footer-navigation .footer-menu a {
+    color: var(--warm-beige);
+    text-decoration: none; /* Remove underline */
+    font-size: 14px; /* Adjust font size */
+    padding: 5px 10px; /* Add padding around the links */
+    transition: color 0.3s; /* Smooth color change on hover */
+}
+
+.footer-navigation .footer-menu a:hover {
+    color: var(--sky-blue);
+}
+
+.site-info {
+    background: #000;
+    padding: 20px;
+}
+
+/* Site info container */
+.site-info {
+    background: #000;
+    text-align: center; /* Center the text in the footer */
+    font-size: 14px; /* Adjust font size for readability */
+    color: #666; /* Light gray color for subtle text */
+    margin-top: 20px; /* Add spacing above the site info */
+    padding: 20px 0; /* Add padding for vertical breathing room */
+    border-top: 1px solid var(--warm-gold);
+}
+
+/* Links within site info */
+.site-info a {
+    color: var(--deep-green);
+    text-decoration: none; /* Remove underline from links */
+}
+
+.site-info a:hover {
+    color: var(--rich-red);
+    text-decoration: underline; /* Underline link on hover */
+}

@@ -12,6 +12,10 @@
  * @package Maghreb
  */
 
+if( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 get_header();
 ?>
 

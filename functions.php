@@ -49,7 +49,8 @@ function maghreb_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'maghreb' ),
+			'maghreb-header-menu' => esc_html__( 'Primary', 'maghreb' ),
+			'maghreb-footer-menu' => esc_html__( 'Secondary', 'maghreb' ),
 		)
 	);
 
@@ -123,7 +124,7 @@ function maghreb_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'maghreb' ),
-			'id'            => 'sidebar-1',
+			'id'            => 'maghreb-1',
 			'description'   => esc_html__( 'Add widgets here.', 'maghreb' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -175,3 +176,39 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+function maghreb_footer_widgets_init() {
+    // Register first footer widget area
+    register_sidebar(array(
+        'name'          => __('Footer Widget 1', 'maghreb'),
+        'id'            => 'footer-1',
+        'description'   => __('First footer widget area', 'maghreb'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+
+    // Register second footer widget area
+    register_sidebar(array(
+        'name'          => __('Footer Widget 2', 'maghreb'),
+        'id'            => 'footer-2',
+        'description'   => __('Second footer widget area', 'maghreb'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+
+    // Register third footer widget area
+    register_sidebar(array(
+        'name'          => __('Footer Widget 3', 'maghreb'),
+        'id'            => 'footer-3',
+        'description'   => __('Third footer widget area', 'maghreb'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+}
+add_action('widgets_init', 'maghreb_footer_widgets_init');

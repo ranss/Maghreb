@@ -16,10 +16,39 @@
 ?>
 	</div>
 	<footer id="colophon" class="site-footer">
+		<div class="footer-widgets">
+			<div class="footer-widget-area footer-widget-1">
+				<?php if (is_active_sidebar('footer-1')) : ?>
+					<?php dynamic_sidebar('footer-1'); ?>
+				<?php endif; ?>
+			</div>
+
+			<div class="footer-widget-area footer-widget-2">
+				<?php if (is_active_sidebar('footer-2')) : ?>
+					<?php dynamic_sidebar('footer-2'); ?>
+				<?php endif; ?>
+			</div>
+
+			<div class="footer-widget-area footer-widget-3">
+				<?php if (is_active_sidebar('footer-3')) : ?>
+					<?php dynamic_sidebar('footer-3'); ?>
+				<?php endif; ?>
+			</div>
+		</div>
+
+		<nav class="footer-navigation" aria-label="<?php esc_attr_e('Footer Menu', 'maghreb'); ?>">
+			<?php
+			wp_nav_menu(array(
+				'theme_location' => 'maghreb-footer-menu',
+				'menu_class'     => 'footer-menu',
+				'container'      => false,
+			));
+			?>
+    	</nav>
 		<div class="site-info">
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s', 'maghreb' ), 'Maghreb', '<a href="http://anassrahou.com/">Anass Rahou</a>' );
+				printf( esc_html__( '%1$s by %2$s', 'maghreb' ), 'Maghreb', '<a href="http://anassrahou.com/">Anass Rahou</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
