@@ -1,39 +1,37 @@
-=== Maghreb ===
-
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-Requires at least: 4.5
-Tested up to: 5.4
-Requires PHP: 5.6
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-
-A starter theme called Maghreb.
+=== Maghreb Theme ===
+Contributors: YourName
+Requires at least: 5.0
+Tested up to: 6.4
+Requires PHP: 7.2
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, custom-colors, custom-header, custom-menu, one-column, two-columns, right-sidebar, theme-options, translation-ready
 
 == Description ==
-
-A basic WordPress theme for blogs and magazines, based on Morocco and its colors.
+Maghreb is a modern WordPress theme designed for bloggers and content creators inspired by Moroccan culture. It offers a clean design, responsive layout, and customizable features that allow users to personalize their site with ease. Perfect for blogging and sharing stories, it includes options for custom colors, typography, and widget-ready areas.
 
 == Installation ==
+1. Upload the "Maghreb" theme folder to the `/wp-content/themes/` directory.
+2. Log in to your WordPress dashboard.
+3. Navigate to Appearance > Themes.
+4. Locate and activate the "Maghreb" theme.
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
-
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-Maghreb includes support for WooCommerce and for Infinite Scroll in Jetpack.
+== Features ==
+* Fully responsive design.
+* Customizer options for colors, typography, and layout.
+* Custom widgets for recent posts and social media links.
+* Translation-ready for multiple languages.
+* Optimized for SEO.
 
 == Changelog ==
-
-= 1.0 - May 12 2015 =
-* Initial release
+= 1.0.0 =
+* Initial release.
 
 == Credits ==
+* Design and Development: Anass Rahou
 
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+== Support ==
+For support and documentation, visit: [https://yourwebsite.com/support](https://yourwebsite.com/support)
+
+== Notes ==
+This theme adheres to WordPress coding standards and best practices. For any inquiries or suggestions, please reach out through the support link above.
