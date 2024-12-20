@@ -31,7 +31,7 @@ Maghreb is a modern WordPress theme designed for bloggers and content creators i
 * Design and Development: Anass Rahou
 
 == Support ==
-For support and documentation, visit: [https://yourwebsite.com/support](https://yourwebsite.com/support)
+For support and documentation, visit: [https://anassrahou.com](https://anassrahou.com/support)
 
 == Notes ==
 This theme adheres to WordPress coding standards and best practices. For any inquiries or suggestions, please reach out through the support link above.
