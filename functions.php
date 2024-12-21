@@ -91,15 +91,14 @@ function maghreb_setup() {
 	 *
 	 * @link https://codex.wordpress.org/Theme_Logo
 	 */
-	add_theme_support(
-		'custom-logo',
-		array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		)
-	);
+    // Add support for Custom Logo
+    add_theme_support('custom-logo', array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array('site-title', 'site-description'),
+    ));
 }
 add_action( 'after_setup_theme', 'maghreb_setup' );
 
@@ -123,13 +122,25 @@ add_action( 'after_setup_theme', 'maghreb_content_width', 0 );
 function maghreb_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'maghreb' ),
-			'id'            => 'maghreb-1',
+			'name'          => esc_html__( 'Maghreb left', 'maghreb' ),
+			'id'            => 'maghreb-left-sidebar',
 			'description'   => esc_html__( 'Add widgets here.', 'maghreb' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Maghreb right', 'maghreb' ),
+			'id'            => 'maghreb-right-sidebar',
+			'description'   => esc_html__( 'Add widgets here.', 'maghreb' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
 		)
 	);
 }
@@ -212,3 +223,9 @@ function maghreb_footer_widgets_init() {
     ));
 }
 add_action('widgets_init', 'maghreb_footer_widgets_init');
+
+
+function maghreb_customizer_live_preview() {
+    wp_enqueue_script('maghreb-customizer', get_template_directory_uri() . '/js/customizer.js', array('jquery', 'customize-preview'), null, true);
+}
+add_action('customize_preview_init', 'maghreb_customizer_live_preview');

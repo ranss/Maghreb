@@ -19,7 +19,7 @@ if( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-	
+		<?php get_sidebar( 'right' ); ?>	
 		<main id="primary" class="site-main">
 			<?php
 

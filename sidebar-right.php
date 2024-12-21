@@ -7,11 +7,11 @@
  * @package Maghreb
  */
 
-if ( ! is_active_sidebar( 'maghreb-left-sidebar' ) ) {
-	return;
+if ( ! is_active_sidebar( 'maghreb-right-sidebar' ) ) {
+	echo "<h4>There is no widgets yet!</h4>";
 }
 ?>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'maghreb-left-sidebar' ); ?>
+<aside id="secondary" class="widget-area right-sidebar">
+	<?php dynamic_sidebar( 'maghreb-right-sidebar' ); ?>
 </aside><!-- #secondary -->

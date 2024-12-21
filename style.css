@@ -981,6 +981,7 @@ Maghreb styles
     --deep-green: #4b6b3c; /* Deep Green */
     --sky-blue: #58a6d2;   /* Sky Blue */
     --warm-beige: #f4e1b1; /* Warm Beige */
+    --old-white: #ebe8d7; /* Warm Beige */
 
     /* Font Families */
     --font-heading: "Merriweather", serif;
@@ -1007,6 +1008,7 @@ Maghreb styles
 body {
     line-height: 1.6;
     background-color: var(--background-main);
+    background-color: <?php echo esc_attr(get_theme_mod('maghreb_background_color', '#ffffff')); ?>;
     /* background-color: #f9f9f9; */
     color: var(--dark-green);
     font-family: "Roboto", serif;
@@ -1014,6 +1016,11 @@ body {
     font-family: var(--font-body);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
+
+    body {
+        
+        font-size: <?php echo esc_attr(get_theme_mod('maghreb_font_size', '16')); ?>px;
+    }
 }
 
 /* Site Wrapper */
@@ -1215,7 +1222,6 @@ h6 {
 /* Style the title */
 .comments-title {
     font-size: 1.5em;
-    color: #333;
     margin-bottom: 20px;
     border-bottom: 2px solid var(--deep-green); /* WordPress blue */
     padding-bottom: 5px;
@@ -1232,10 +1238,10 @@ h6 {
 .comment {
     margin-bottom: 20px;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--warm-gold);
     border-radius: 5px;
-    background-color: var(--sky-blue);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
 }
 
 /* Style the comment author */
@@ -1253,23 +1259,19 @@ h6 {
 
 .comment-author .fn {
     font-weight: bold;
-    color: #0073aa; /* WordPress blue for links */
 }
 
 .comment-author .says {
-    color: #666;
     margin-left: 5px;
 }
 
 /* Style the comment metadata */
 .comment-metadata {
     font-size: 0.9em;
-    color: #999;
     margin-bottom: 10px;
 }
 
 .comment-metadata a {
-    color: #0073aa;
     text-decoration: none;
 }
 
@@ -1281,7 +1283,6 @@ h6 {
 .comment-content {
     font-size: 1em;
     line-height: 1.6;
-    color: #444;
     margin-bottom: 10px;
 }
 
@@ -1307,9 +1308,9 @@ h6 {
 /* Style the comment form */
 .comment-respond {
     margin-top: 30px;
-    background-color: #f9f9f9;
+    background-color: var(--old-white);
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--warm-gold);
     border-radius: 5px;
 }
 
@@ -1344,7 +1345,7 @@ h6 {
 
 /* Style the submit button */
 .comment-respond input[type="submit"] {
-    background-color: #0073aa;
+    background-color: var(--deep-green);
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -1354,7 +1355,7 @@ h6 {
 }
 
 .comment-respond input[type="submit"]:hover {
-    background-color: #005177;
+    background-color: var(--rich-red);
 }
 
 /* Style the 'required' fields */
@@ -1576,46 +1577,100 @@ button:hover, input[type="submit"]:hover, .button:hover {
     margin-right: 15px; /* Space between date and author */
 }
 
-/* General styling for the entry footer */
+/* Footer Styling */
 .entry-footer {
-    font-size: 14px; /* Standard font size for readability */
-    color: #666; /* Light gray text color for a subtle look */
-    margin-top: 20px; /* Space above the footer */
-    font-family: 'Roboto', sans-serif; /* Font style */
+    background-color: #f8f8f8; /* Light gray background */
+    padding: 20px 30px; /* Padding around the footer */
+    border-top: 2px solid var(--deep-green);
+    font-size: 14px; /* Default font size */
+    line-height: 1.6; /* Line height for better readability */
+    text-align: left; /* Align text to the left */
 }
 
-/* Styling for the category links */
+/* Category Links */
 .entry-footer .cat-links {
-    font-weight: bold; /* Bold the "Posted in" label */
-    color: #333; /* Darker color for the category text */
+    font-weight: bold; /* Make category label bold */
+    margin-right: 10px; /* Space between category and tags */
 }
 
 .entry-footer .cat-links a {
-    color: #0073aa; /* WordPress blue color for the category link */
     text-decoration: none; /* Remove underline */
 }
 
 .entry-footer .cat-links a:hover {
-    color: #005177; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
 }
 
-/* Styling for the comments link */
+/* Add separator after category */
+.entry-footer .cat-links::after {
+    content: ' |'; /* Pipe separator */
+    margin-left: 10px; /* Space before separator */
+}
+
+/* Tags Links */
+.entry-footer .tags-links {
+    margin-left: 10px;
+    font-style: italic; /* Make the tags italic */
+}
+
+.entry-footer .tags-links a {
+    text-decoration: none; /* Remove underline */
+    margin-right: 5px; /* Space between tags */
+}
+
+.entry-footer .tags-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Add separator after tags */
+.entry-footer .tags-links::after {
+    content: ' |'; /* Pipe separator */
+    margin-left: 10px; /* Space before separator */
+}
+
+/* Comments Link */
 .entry-footer .comments-link {
-    margin-left: 20px; /* Space between category and comment link */
+    display: inline-block; /* Display inline-block to avoid breaking the layout */
+    margin-left: 20px;
 }
 
 .entry-footer .comments-link a {
-    color: #0073aa; /* WordPress blue for the comment link */
     text-decoration: none; /* Remove underline */
 }
 
 .entry-footer .comments-link a:hover {
-    color: #005177; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
 }
 
-/* Hidden screen reader text for comment description */
-.entry-footer .screen-reader-text {
-    display: none; /* Keep screen-reader text hidden */
+/* Add separator after comments */
+.entry-footer .comments-link::after {
+    content: ' |'; /* Pipe separator */
+    margin-left: 10px; /* Space before separator */
+}
+
+/* Edit Link */
+.entry-footer .edit-link {
+    display: inline-block; /* Display inline-block */
+    margin-left: 20px;
+}
+
+.entry-footer .edit-link a {
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text for the Edit link */
+}
+
+.entry-footer .edit-link a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Remove separator after the last item */
+.entry-footer .edit-link::after {
+    content: ''; /* Remove separator */
+}
+
+/* Screen reader text (for accessibility) */
+.screen-reader-text {
+    display: none; /* Hide screen reader text visually */
 }
 
 /* Footer Widget Area Styling */
@@ -1718,4 +1773,36 @@ button:hover, input[type="submit"]:hover, .button:hover {
 .site-info a:hover {
     color: var(--rich-red);
     text-decoration: underline; /* Underline link on hover */
+}
+
+
+/* Site Branding */
+.site-branding {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align, adjust as needed */
+    padding: 20px 0;
+}
+
+/* Custom Logo */
+.site-logo img {
+    max-height: 100px; /* Adjust as needed */
+    height: auto;
+    width: auto;
+}
+
+/* Site Title and Description */
+.site-title-description {
+    text-align: center; /* Adjust alignment as needed */
+    margin-left: 15px; /* Space between logo and text */
+}
+
+.site-title {
+    font-size: 24px;
+    margin: 0;
+}
+
+.site-description {
+    font-size: 14px;
+    color: #666;
 }
