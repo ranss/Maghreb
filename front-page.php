@@ -2,7 +2,7 @@
 /**
  * Template for displaying the static homepage
  *
- * @package Maghreb
+ * @package Bidaya
  */
 
 if( ! defined( 'ABSPATH' ) ) {
@@ -13,7 +13,7 @@ get_header(); ?>
 
 <main id="primary" class="site-main">
 
-<section class="maghreb-hero-section" style="
+<section class="bidaya-hero-section" style="
     background-image: url('<?php echo esc_url(get_theme_mod('hero_background_image', '')); ?>');
     background-position: <?php echo esc_attr(get_theme_mod('hero_background_position', 'center center')); ?>;
     background-size: <?php echo esc_attr(get_theme_mod('hero_background_size', 'cover')); ?>;
@@ -23,28 +23,28 @@ get_header(); ?>
     justify-content: <?php echo esc_attr( get_theme_mod( 'hero_content_center', 'yes' ) ) === 'yes' ? 'center' : 'flex-start'; ?>;
     align-items: <?php echo esc_attr( get_theme_mod( 'hero_content_center', 'yes' ) ) === 'yes' ? 'center' : 'flex-start' ?>;
 ">
-    <h1 class="maghreb-hero-title" style="font-size: <?php echo esc_attr(get_theme_mod('hero_title_size', '32')); ?>px;">
+    <h1 class="bidaya-hero-title" style="font-size: <?php echo esc_attr(get_theme_mod('hero_title_size', '32')); ?>px;">
         <?php echo esc_html(get_theme_mod('hero_title', 'Welcome to Our Website')); ?>
     </h1>
-    <div class="maghreb-hero-description" style="
+    <div class="bidaya-hero-description" style="
     font-size: <?php echo esc_attr(get_theme_mod('hero_description_size', '32')); ?>px;
     line-height: <?php echo esc_attr( get_theme_mod('hero_line_height', '1.5') ) ?>;">
         <p><?php echo wp_kses_post(get_theme_mod('hero_description', 'Your customizable description goes here.')); ?></p>
     </div>
-    <a href="<?php echo esc_url(get_theme_mod('hero_button_url', '#')); ?>" class="maghreb-hero-button">
+    <a href="<?php echo esc_url(get_theme_mod('hero_button_url', '#')); ?>" class="bidaya-hero-button">
         <?php echo esc_html(get_theme_mod('hero_button_text', 'Learn More')); ?>
     </a>
 </section>
 
     <!-- Front Page Widget Section -->
-    <section class="maghreb-widget-section">
+    <section class="bidaya-widget-section">
         <?php for ($i = 1; $i <= 3; $i++) {
-        $title = get_theme_mod("maghreb_widget_{$i}_title", "Widget {$i} Title");
-        $description = get_theme_mod("maghreb_widget_{$i}_description", "Widget {$i} Description");
-        $button_text = get_theme_mod("maghreb_widget_{$i}_button_text", "Learn More {$i}");
-        $button_url = get_theme_mod("maghreb_widget_{$i}_button_url", "#");
-        $icon = get_theme_mod("maghreb_widget_{$i}_icon", "fa-star");
-        $button_size = get_theme_mod("maghreb_widget_{$i}_button_size", "medium");
+        $title = get_theme_mod("bidaya_widget_{$i}_title", "Widget {$i} Title");
+        $description = get_theme_mod("bidaya_widget_{$i}_description", "Widget {$i} Description");
+        $button_text = get_theme_mod("bidaya_widget_{$i}_button_text", "Learn More {$i}");
+        $button_url = get_theme_mod("bidaya_widget_{$i}_button_url", "#");
+        $icon = get_theme_mod("bidaya_widget_{$i}_icon", "fa-star");
+        $button_size = get_theme_mod("bidaya_widget_{$i}_button_size", "medium");
         ?>
 
         <div class="widget widget-<?php echo $i; ?>">
@@ -68,7 +68,7 @@ get_header(); ?>
         <!-- You can add a button here if necessary -->
     </section>
 
-    <section id="maghreb-six-section">
+    <section id="bidaya-six-section">
         <header class="six-header">
             <h2>Our six section</h2>
             <p>This is the section where we can publish about our six section.</p>
@@ -77,21 +77,21 @@ get_header(); ?>
             <div class="section-item">
                 <i class="fa fa-cog"></i>
                 <div class="text-content">
-                    <?php dynamic_sidebar( 'maghreb-home-1' ) ?>
+                    <?php dynamic_sidebar( 'bidaya-home-1' ) ?>
                 </div>
             </div>
 
             <div class="section-item">
                 <i class="fa fa-star"></i>
                 <div class="text-content">
-                    <?php dynamic_sidebar( 'maghreb-home-2' ); ?>
+                    <?php dynamic_sidebar( 'bidaya-home-2' ); ?>
                 </div>
             </div>
 
             <div class="section-item">
                 <i class="fa fa-heart"></i>
                 <div class="text-content">
-                <?php dynamic_sidebar( 'maghreb-home-3' ); ?>
+                <?php dynamic_sidebar( 'bidaya-home-3' ); ?>
                 </div>
             </div>
         </section>

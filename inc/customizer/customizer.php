@@ -1,6 +1,6 @@
 <?php
  /**
-  * Maghreb Theme Customizer
+  * Bidaya Theme Customizer
   *
-  * @package Maghreb
+  * @package Bidaya
   */

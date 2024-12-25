@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Maghreb
+ * @package Bidaya
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function maghreb_jetpack_setup() {
+function bidaya_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'maghreb_infinite_scroll_render',
+			'render'    => 'bidaya_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function maghreb_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'maghreb-style',
+				'stylesheet' => 'bidaya-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,13 +48,13 @@ function maghreb_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'maghreb_jetpack_setup' );
+add_action( 'after_setup_theme', 'bidaya_jetpack_setup' );
 
-if ( ! function_exists( 'maghreb_infinite_scroll_render' ) ) :
+if ( ! function_exists( 'bidaya_infinite_scroll_render' ) ) :
 	/**
 	 * Custom render function for Infinite Scroll.
 	 */
-	function maghreb_infinite_scroll_render() {
+	function bidaya_infinite_scroll_render() {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :

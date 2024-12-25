@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Maghreb
+ * @package Bidaya
  */
 
 if( ! defined( 'ABSPATH' ) ) {

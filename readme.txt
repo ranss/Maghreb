@@ -1,5 +1,5 @@
-=== Maghreb Theme ===
-Contributors: YourName
+=== Bidaya Theme ===
+Contributors: Anass Rahou
 Requires at least: 5.0
 Tested up to: 6.4
 Requires PHP: 7.2
@@ -8,13 +8,13 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, custom-colors, custom-header, custom-menu, one-column, two-columns, right-sidebar, theme-options, translation-ready
 
 == Description ==
-Maghreb is a modern WordPress theme designed for bloggers and content creators inspired by Moroccan culture. It offers a clean design, responsive layout, and customizable features that allow users to personalize their site with ease. Perfect for blogging and sharing stories, it includes options for custom colors, typography, and widget-ready areas.
+Bidaya is a modern WordPress theme designed for bloggers and content creators inspired by Moroccan culture. It offers a clean design, responsive layout, and customizable features that allow users to personalize their site with ease. Perfect for blogging and sharing stories, it includes options for custom colors, typography, and widget-ready areas.
 
 == Installation ==
-1. Upload the "Maghreb" theme folder to the `/wp-content/themes/` directory.
+1. Upload the "Bidaya" theme folder to the `/wp-content/themes/` directory.
 2. Log in to your WordPress dashboard.
 3. Navigate to Appearance > Themes.
-4. Locate and activate the "Maghreb" theme.
+4. Locate and activate the "Bidaya" theme.
 
 == Features ==
 * Fully responsive design.

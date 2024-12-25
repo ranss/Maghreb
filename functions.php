@@ -1,10 +1,10 @@
 <?php
 /**
- * Maghreb functions and definitions
+ * Bidaya functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Maghreb
+ * @package Bidaya
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -19,14 +19,14 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function maghreb_setup() {
+function bidaya_setup() {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on Maghreb, use a find and replace
-		* to change 'maghreb' to the name of your theme in all the template files.
+		* If you're building a theme based on Bidaya, use a find and replace
+		* to change 'bidaya' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'maghreb', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'bidaya', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -49,8 +49,8 @@ function maghreb_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'maghreb-header-menu' => esc_html__( 'Primary', 'maghreb' ),
-			'maghreb-footer-menu' => esc_html__( 'Secondary', 'maghreb' ),
+			'bidaya-header-menu' => esc_html__( 'Primary', 'bidaya' ),
+			'bidaya-footer-menu' => esc_html__( 'Secondary', 'bidaya' ),
 		)
 	);
 
@@ -75,7 +75,7 @@ function maghreb_setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'maghreb_custom_background_args',
+			'bidaya_custom_background_args',
 			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -100,7 +100,7 @@ function maghreb_setup() {
         'header-text' => array('site-title', 'site-description'),
     ));
 }
-add_action( 'after_setup_theme', 'maghreb_setup' );
+add_action( 'after_setup_theme', 'bidaya_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -109,22 +109,22 @@ add_action( 'after_setup_theme', 'maghreb_setup' );
  *
  * @global int $content_width
  */
-function maghreb_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'maghreb_content_width', 640 );
+function bidaya_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'bidaya_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'maghreb_content_width', 0 );
+add_action( 'after_setup_theme', 'bidaya_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function maghreb_widgets_init() {
+function bidaya_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Maghreb left', 'maghreb' ),
-			'id'            => 'maghreb-left-sidebar',
-			'description'   => esc_html__( 'Add widgets here.', 'maghreb' ),
+			'name'          => esc_html__( 'Bidaya left', 'bidaya' ),
+			'id'            => 'bidaya-left-sidebar',
+			'description'   => esc_html__( 'Add widgets here.', 'bidaya' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="widget-title">',
@@ -134,9 +134,9 @@ function maghreb_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Maghreb right', 'maghreb' ),
-			'id'            => 'maghreb-right-sidebar',
-			'description'   => esc_html__( 'Add widgets here.', 'maghreb' ),
+			'name'          => esc_html__( 'Bidaya right', 'bidaya' ),
+			'id'            => 'bidaya-right-sidebar',
+			'description'   => esc_html__( 'Add widgets here.', 'bidaya' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="widget-title">',
@@ -144,22 +144,22 @@ function maghreb_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'maghreb_widgets_init' );
+add_action( 'widgets_init', 'bidaya_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function maghreb_scripts() {
-	wp_enqueue_style( 'maghreb-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'maghreb-style', 'rtl', 'replace' );
+function bidaya_scripts() {
+	wp_enqueue_style( 'bidaya-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'bidaya-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'maghreb-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'bidaya-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'maghreb_scripts' );
+add_action( 'wp_enqueue_scripts', 'bidaya_scripts' );
 
 /**
  * Custom template tags for this theme.
@@ -178,12 +178,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-function maghreb_footer_widgets_init() {
+function bidaya_footer_widgets_init() {
     // Register first footer widget area
     register_sidebar(array(
-        'name'          => __('Footer Widget 1', 'maghreb'),
+        'name'          => __('Footer Widget 1', 'bidaya'),
         'id'            => 'footer-1',
-        'description'   => __('First footer widget area', 'maghreb'),
+        'description'   => __('First footer widget area', 'bidaya'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
@@ -192,9 +192,9 @@ function maghreb_footer_widgets_init() {
 
     // Register second footer widget area
     register_sidebar(array(
-        'name'          => __('Footer Widget 2', 'maghreb'),
+        'name'          => __('Footer Widget 2', 'bidaya'),
         'id'            => 'footer-2',
-        'description'   => __('Second footer widget area', 'maghreb'),
+        'description'   => __('Second footer widget area', 'bidaya'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
@@ -203,47 +203,47 @@ function maghreb_footer_widgets_init() {
 
     // Register third footer widget area
     register_sidebar(array(
-        'name'          => __('Footer Widget 3', 'maghreb'),
+        'name'          => __('Footer Widget 3', 'bidaya'),
         'id'            => 'footer-3',
-        'description'   => __('Third footer widget area', 'maghreb'),
+        'description'   => __('Third footer widget area', 'bidaya'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ));
 }
-add_action('widgets_init', 'maghreb_footer_widgets_init');
+add_action('widgets_init', 'bidaya_footer_widgets_init');
 
 
-function maghreb_home_widgets() {
+function bidaya_home_widgets() {
 	register_sidebar( array(
-        'name'          => 'Maghreb home one',
-        'id'            => 'maghreb-home-1',
-        'before_widget' => '<div class="maghreb-home-one">',
+        'name'          => 'Bidaya home one',
+        'id'            => 'bidaya-home-1',
+        'before_widget' => '<div class="bidaya-home-one">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ) );
 
 	register_sidebar( array(
-        'name'          => 'Maghreb home two',
-        'id'            => 'maghreb-home-2',
-        'before_widget' => '<div class="maghreb-home-two">',
+        'name'          => 'Bidaya home two',
+        'id'            => 'bidaya-home-2',
+        'before_widget' => '<div class="bidaya-home-two">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ) );
 
 	register_sidebar( array(
-        'name'          => 'Maghreb home three',
-        'id'            => 'maghreb-home-3',
-        'before_widget' => '<div class="maghreb-home-three">',
+        'name'          => 'Bidaya home three',
+        'id'            => 'bidaya-home-3',
+        'before_widget' => '<div class="bidaya-home-three">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ) );
 }
-add_action( 'widgets_init', 'maghreb_home_widgets' );
+add_action( 'widgets_init', 'bidaya_home_widgets' );
 
 add_action('widgets_init', 'your_theme_register_sidebars');
 function your_theme_register_sidebars() {
@@ -282,16 +282,16 @@ function your_theme_register_sidebars() {
 }
 
 
-function maghreb_fonts_awesome() {
+function bidaya_fonts_awesome() {
     wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css' );
-    wp_enqueue_style( 'style-maghreb', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'style-bidaya', get_template_directory_uri() . '/style.css' );
 }
-add_action( 'wp_enqueue_scripts', 'maghreb_fonts_awesome' );
+add_action( 'wp_enqueue_scripts', 'bidaya_fonts_awesome' );
 
-function maghreb_customizer_live_preview() {
-    wp_enqueue_script('maghreb-customizer', get_template_directory_uri() . '/js/customizer.js', array('jquery', 'customize-preview'), null, true);
+function bidaya_customizer_live_preview() {
+    wp_enqueue_script('bidaya-customizer', get_template_directory_uri() . '/js/customizer.js', array('jquery', 'customize-preview'), null, true);
 }
-add_action('customize_preview_init', 'maghreb_customizer_live_preview');
+add_action('customize_preview_init', 'bidaya_customizer_live_preview');
 
 $theme_dir = get_template_directory();
 
@@ -300,14 +300,14 @@ require $theme_dir . '/inc/customizer/customizer-helper.php';
 require $theme_dir . '/inc/customizer/sections/hero-section.php';
 require $theme_dir . '/inc/customizer/class-customize-field.php';
 
-function maghreb_customizer_assets() {
-    wp_enqueue_style('maghreb-customizer-style', get_template_directory_uri() . '/assets/css/customizer.css');
-    wp_enqueue_script('maghreb-customizer-script', get_template_directory_uri() . '/assets/js/customizer.js', array('jquery'), null, true);
+function bidaya_customizer_assets() {
+    wp_enqueue_style('bidaya-customizer-style', get_template_directory_uri() . '/assets/css/customizer.css');
+    wp_enqueue_script('bidaya-customizer-script', get_template_directory_uri() . '/assets/js/customizer.js', array('jquery'), null, true);
 }
-add_action('customize_controls_enqueue_scripts', 'maghreb_customizer_assets');
+add_action('customize_controls_enqueue_scripts', 'bidaya_customizer_assets');
 
 
-function maghreb_load_customizer_files() {
+function bidaya_load_customizer_files() {
     require get_template_directory() . '/inc/customizer/class-customize-field.php';
 }
-add_action('after_setup_theme', 'maghreb_load_customizer_files');
+add_action('after_setup_theme', 'bidaya_load_customizer_files');

@@ -1,5 +1,5 @@
 /*!
-Theme Name: Maghreb
+Theme Name: Bidaya
 Theme URI: http://underscores.me/
 Author: Anass Rahou
 Author URI: http://underscores.me/
@@ -9,13 +9,13 @@ Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: maghreb
+Text Domain: bidaya
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
 
-Maghreb is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Bidaya is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -970,7 +970,7 @@ textarea {
 
 
 /*
-Maghreb styles
+Bidaya styles
 */
 
 :root {
@@ -1008,7 +1008,7 @@ Maghreb styles
 body {
     line-height: 1.6;
     background-color: var(--background-main);
-    background-color: <?php echo esc_attr(get_theme_mod('maghreb_background_color', '#ffffff')); ?>;
+    background-color: <?php echo esc_attr(get_theme_mod('bidaya_background_color', '#ffffff')); ?>;
     /* background-color: #f9f9f9; */
     color: var(--dark-green);
     font-family: "Roboto", serif;
@@ -1781,7 +1781,7 @@ button:hover, input[type="submit"]:hover, .button:hover {
 }
 
 
-.maghreb-hero-section {
+.bidaya-hero-section {
     position: relative;
     margin: 0 auto;
     padding: 40px;
@@ -1795,7 +1795,7 @@ button:hover, input[type="submit"]:hover, .button:hover {
 }
 
 /* Hero Section Styles */
-.maghreb-hero-section {
+.bidaya-hero-section {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1805,18 +1805,18 @@ button:hover, input[type="submit"]:hover, .button:hover {
 }
 
 /* Hero Title Styles */
-.maghreb-hero-title {
+.bidaya-hero-title {
     margin: 0 0 20px 0;
     line-height: 1.2;
 }
 
 /* Hero Description Styles */
-.maghreb-hero-description {
+.bidaya-hero-description {
     margin-bottom: 20px; /* Space below description */
 }
 
 /* Hero Button Styles */
-.maghreb-hero-button {
+.bidaya-hero-button {
     font-size: 16px;
     font-weight: bold;
     background-color: #007bff; /* Button color */
@@ -1828,11 +1828,11 @@ button:hover, input[type="submit"]:hover, .button:hover {
     transition: background-color 0.3s ease; /* Smooth color transition */
 }
 
-.maghreb-hero-button:hover {
+.bidaya-hero-button:hover {
     background-color: #0056b3; /* Darker shade on hover */
 }
 
-.maghreb-widget-section {
+.bidaya-widget-section {
     display: flex;
     justify-content: space-between; /* Even spacing between widgets */
     align-items: flex-start; /* Align items to the top */
@@ -1842,7 +1842,7 @@ button:hover, input[type="submit"]:hover, .button:hover {
     background-color: #f9f9f9; /* Light background color */
 }
 
-.maghreb-widget-section .widget {
+.bidaya-widget-section .widget {
     background: #fff; /* White card background */
     border: 1px solid #ddd; /* Subtle border */
     border-radius: 8px; /* Rounded corners */
@@ -1854,24 +1854,24 @@ button:hover, input[type="submit"]:hover, .button:hover {
     box-sizing: border-box; /* Include padding in width */
 }
 
-.maghreb-widget-section .widget i {
+.bidaya-widget-section .widget i {
     color: #ff9800; /* Accent color */
     margin-bottom: 10px;
 }
 
-.maghreb-widget-section .widget h3 {
+.bidaya-widget-section .widget h3 {
     font-size: 20px;
     margin: 20px 0;
     color: #333; /* Dark text */
 }
 
-.maghreb-widget-section .widget p {
+.bidaya-widget-section .widget p {
     font-size: 16px;
     color: #555; /* Subtle text color */
     margin: 10px 0 20px;
 }
 
-.maghreb-widget-section .widget .btn {
+.bidaya-widget-section .widget .btn {
     display: inline-block;
     padding: 10px 20px;
     font-size: 14px;
@@ -1884,7 +1884,7 @@ button:hover, input[type="submit"]:hover, .button:hover {
     transition: background 0.3s ease;
 }
 
-.maghreb-widget-section .widget .btn:hover {
+.bidaya-widget-section .widget .btn:hover {
     background: #e68a00; /* Darker accent color */
 }
 
@@ -1965,13 +1965,13 @@ button:hover, input[type="submit"]:hover, .button:hover {
 }
 
 
-#maghreb-six-section {
+#bidaya-six-section {
     background: var(--warm-beige);
     margin: 80px -45px;
     padding: 20px;
 }
 
-#maghreb-six-section .six-header {
+#bidaya-six-section .six-header {
     margin: 0 auto;
     text-align: center;
 }

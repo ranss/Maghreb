@@ -4,14 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Maghreb
+ * @package Bidaya
  */
 
-if ( ! is_active_sidebar( 'maghreb-left-sidebar' ) ) {
+if ( ! is_active_sidebar( 'bidaya-left-sidebar' ) ) {
 	return;
 }
 ?>
 
 <aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'maghreb-left-sidebar' ); ?>
+	<?php dynamic_sidebar( 'bidaya-left-sidebar' ); ?>
 </aside><!-- #secondary -->

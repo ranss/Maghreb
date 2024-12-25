@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Maghreb
+ * @package Bidaya
  */
 
 if( ! defined( 'ABSPATH' ) ) {
@@ -26,7 +26,7 @@ get_header();
 			/**
 			 * 
 			 */
-			do_action( 'maghreb_before_main_content' );
+			do_action( 'bidaya_before_main_content' );
 			
 			if ( have_posts() ) :
 
@@ -54,7 +54,7 @@ get_header();
 				/**
 				 * 
 				 */
-				do_action( 'maghreb_after_loop' );
+				do_action( 'bidaya_after_loop' );
 
 				the_posts_navigation();
 
@@ -67,7 +67,7 @@ get_header();
 			/**
 			 * 
 			 */
-			do_action( 'maghreb_after_main_content' );
+			do_action( 'bidaya_after_main_content' );
 			?>
 
 		</main><!-- #main -->
@@ -79,6 +79,6 @@ get_header();
 		/**
 		 * 
 		*/
-		do_action( 'maghreb_after_primary_content_area' );
+		do_action( 'bidaya_after_primary_content_area' );
 
 		get_footer();
