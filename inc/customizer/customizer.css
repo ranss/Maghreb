@@ -1,0 +1,53 @@
+.last-posts {
+    margin: 40px 0;
+}
+
+.last-posts h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.last-posts-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.last-post-item {
+    width: 30%; /* Adjust as needed */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.last-post-item .post-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.last-post-item .post-title {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.last-post-item .post-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.last-post-item .post-title a:hover {
+    text-decoration: underline;
+    color: #0073aa;
+}
+
+.last-post-item .post-excerpt {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 10px 15px;
+}

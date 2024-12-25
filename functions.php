@@ -162,11 +162,6 @@ function maghreb_scripts() {
 add_action( 'wp_enqueue_scripts', 'maghreb_scripts' );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -175,11 +170,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -225,7 +215,99 @@ function maghreb_footer_widgets_init() {
 add_action('widgets_init', 'maghreb_footer_widgets_init');
 
 
+function maghreb_home_widgets() {
+	register_sidebar( array(
+        'name'          => 'Maghreb home one',
+        'id'            => 'maghreb-home-1',
+        'before_widget' => '<div class="maghreb-home-one">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+
+	register_sidebar( array(
+        'name'          => 'Maghreb home two',
+        'id'            => 'maghreb-home-2',
+        'before_widget' => '<div class="maghreb-home-two">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+
+	register_sidebar( array(
+        'name'          => 'Maghreb home three',
+        'id'            => 'maghreb-home-3',
+        'before_widget' => '<div class="maghreb-home-three">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+}
+add_action( 'widgets_init', 'maghreb_home_widgets' );
+
+add_action('widgets_init', 'your_theme_register_sidebars');
+function your_theme_register_sidebars() {
+    // Register Sidebar 1 for Latest News
+    register_sidebar(array(
+        'name'          => esc_html__('Latest News', 'your-theme'),
+        'id'            => 'sidebar-1',
+        'description'   => esc_html__('Widgets for the latest news sidebar.', 'your-theme'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+
+    // Register Sidebar 2 for Featured Services
+    register_sidebar(array(
+        'name'          => esc_html__('Featured Services', 'your-theme'),
+        'id'            => 'sidebar-2',
+        'description'   => esc_html__('Widgets for the featured services sidebar.', 'your-theme'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+
+    // Register Sidebar 3 for Testimonials
+    register_sidebar(array(
+        'name'          => esc_html__('Testimonials', 'your-theme'),
+        'id'            => 'sidebar-3',
+        'description'   => esc_html__('Widgets for client testimonials.', 'your-theme'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+}
+
+
+function maghreb_fonts_awesome() {
+    wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css' );
+    wp_enqueue_style( 'style-maghreb', get_template_directory_uri() . '/style.css' );
+}
+add_action( 'wp_enqueue_scripts', 'maghreb_fonts_awesome' );
+
 function maghreb_customizer_live_preview() {
     wp_enqueue_script('maghreb-customizer', get_template_directory_uri() . '/js/customizer.js', array('jquery', 'customize-preview'), null, true);
 }
 add_action('customize_preview_init', 'maghreb_customizer_live_preview');
+
+$theme_dir = get_template_directory();
+
+require $theme_dir . '/inc/customizer/customizer.php';
+require $theme_dir . '/inc/customizer/customizer-helper.php';
+require $theme_dir . '/inc/customizer/sections/hero-section.php';
+require $theme_dir . '/inc/customizer/class-customize-field.php';
+
+function maghreb_customizer_assets() {
+    wp_enqueue_style('maghreb-customizer-style', get_template_directory_uri() . '/assets/css/customizer.css');
+    wp_enqueue_script('maghreb-customizer-script', get_template_directory_uri() . '/assets/js/customizer.js', array('jquery'), null, true);
+}
+add_action('customize_controls_enqueue_scripts', 'maghreb_customizer_assets');
+
+
+function maghreb_load_customizer_files() {
+    require get_template_directory() . '/inc/customizer/class-customize-field.php';
+}
+add_action('after_setup_theme', 'maghreb_load_customizer_files');

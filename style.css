@@ -1016,11 +1016,6 @@ body {
     font-family: var(--font-body);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-
-    body {
-        
-        font-size: <?php echo esc_attr(get_theme_mod('maghreb_font_size', '16')); ?>px;
-    }
 }
 
 /* Site Wrapper */
@@ -1132,7 +1127,7 @@ h6 {
 }
 
 #primary {
-    width: 75%; /* Adjust as needed */
+    /* width: 75%; Adjust as needed */
     padding: 20px;
     box-sizing: border-box;
 	float: right;
@@ -1316,9 +1311,8 @@ h6 {
 
 .comment-respond h3 {
     font-size: 1.2em;
-    color: #333;
     margin-bottom: 15px;
-    border-bottom: 2px solid #0073aa;
+    border-bottom: 2px solid var(--deep-green);
     padding-bottom: 5px;
 }
 
@@ -1330,7 +1324,7 @@ h6 {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--deep-green);
     border-radius: 5px;
     font-size: 1em;
 }
@@ -1345,7 +1339,7 @@ h6 {
 
 /* Style the submit button */
 .comment-respond input[type="submit"] {
-    background-color: var(--deep-green);
+    background-color: var(--warm-gold);
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -1355,18 +1349,18 @@ h6 {
 }
 
 .comment-respond input[type="submit"]:hover {
-    background-color: var(--rich-red);
+    background-color: var(--deep-green);
 }
 
 /* Style the 'required' fields */
 .comment-respond .required {
-    color: #d9534f; /* Bootstrap red */
+    color: var(--rich-red)
 }
 
 /* Cancel reply link */
 #cancel-comment-reply-link {
     font-size: 0.9em;
-    color: #d9534f;
+    color: var(--rich-red);
     text-decoration: none;
     margin-left: 10px;
 }
@@ -1374,59 +1368,6 @@ h6 {
 #cancel-comment-reply-link:hover {
     text-decoration: underline;
 }
-
-/* Main Navigation Container */
-#site-navigation {
-    background-color: var(--warm-beige);
-    padding: 10px 20px; /* Add some spacing */
-    border-bottom: 2px solid #ddd; /* Bottom border for separation */
-}
-
-/* Navigation Menu */
-.nav-menu {
-    list-style: none; /* Remove default bullet points */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Align items horizontally */
-    justify-content: center; /* Center align the menu */
-    gap: 15px; /* Add space between items */
-}
-
-/* Menu Items */
-.nav-menu li {
-    position: relative; /* For dropdowns */
-}
-
-.nav-menu li a {
-    text-decoration: none; /* Remove underline */
-    font-family: 'Lora', serif; /* Example font */
-    font-size: 16px; /* Adjust text size */
-    color: #333; /* Text color */
-    padding: 5px 10px; /* Add padding for clickable area */
-    border-radius: 5px; /* Slightly rounded corners */
-    transition: all 0.3s ease; /* Smooth hover effects */
-}
-
-.nav-menu li a:hover {
-    background-color: #ffc107; /* Highlight on hover */
-    color: #fff; /* Text color on hover */
-}
-
-/* Responsive Menu Toggle Button */
-.menu-toggle {
-    display: none; /* Initially hidden on larger screens */
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.menu-toggle:hover {
-    background-color: #555;
-}
-
 
 /* Buttons */
 button, input[type="submit"], .button {
@@ -1688,7 +1629,6 @@ button:hover, input[type="submit"]:hover, .button:hover {
     margin-bottom: 15px; /* Space below the heading */
 }
 
-
 .footer-widget-area {
     flex: 1;
     padding: 20px;
@@ -1775,34 +1715,355 @@ button:hover, input[type="submit"]:hover, .button:hover {
     text-decoration: underline; /* Underline link on hover */
 }
 
+.home-widget-section {
+    padding: 50px 0;
+    background-color: #f9f9f9; /* Change background color as needed */
+}
 
-/* Site Branding */
-.site-branding {
+.home-widget-section .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-widget-section .widget-item {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    transition: transform 0.3s ease;
+}
+
+.home-widget-section .widget-item:hover {
+    transform: translateY(-10px);
+}
+
+.home-widget-section .widget-item h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.home-widget-section .widget-item p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.home-widget-section .widget-item .btn {
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.home-widget-section .widget-item .btn:hover {
+    background-color: #005bb5;
+}
+
+.hero-section i {
+    font-size: 50px;
+    color: #ffcc00; /* Yellow color */
+    margin-bottom: 20px;
+}
+
+.hero-section .hero-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+
+.maghreb-hero-section {
+    position: relative;
+    margin: 0 auto;
+    padding: 40px;
+    width: 100%;
+}
+
+.hero-section i {
+    font-size: 50px;
+    color: #ffcc00; /* Yellow color */
+    margin-bottom: 20px;
+}
+
+/* Hero Section Styles */
+.maghreb-hero-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px; /* Add padding for spacing */
+}
+
+/* Hero Title Styles */
+.maghreb-hero-title {
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+/* Hero Description Styles */
+.maghreb-hero-description {
+    margin-bottom: 20px; /* Space below description */
+}
+
+/* Hero Button Styles */
+.maghreb-hero-button {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff; /* Button color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.maghreb-hero-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.maghreb-widget-section {
+    display: flex;
+    justify-content: space-between; /* Even spacing between widgets */
+    align-items: flex-start; /* Align items to the top */
+    padding: 60px 40px;
+    gap: 20px; /* Gap between widgets */
+    margin: 50px -45px;
+    background-color: #f9f9f9; /* Light background color */
+}
+
+.maghreb-widget-section .widget {
+    background: #fff; /* White card background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    padding: 20px;
+    flex: 1; /* Equal width for all widgets */
+    max-width: 30%; /* Restrict width to 30% of container */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.maghreb-widget-section .widget i {
+    color: #ff9800; /* Accent color */
+    margin-bottom: 10px;
+}
+
+.maghreb-widget-section .widget h3 {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #333; /* Dark text */
+}
+
+.maghreb-widget-section .widget p {
+    font-size: 16px;
+    color: #555; /* Subtle text color */
+    margin: 10px 0 20px;
+}
+
+.maghreb-widget-section .widget .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff; /* White text */
+    background: #ff9800; /* Accent color */
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.maghreb-widget-section .widget .btn:hover {
+    background: #e68a00; /* Darker accent color */
+}
+
+
+.latest-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px; /* Spacing between grid items */
+    margin: 20px auto; /* Center the grid on the page */
+    max-width: 1200px; /* Optional: Set a max-width for the grid */
+}
+
+.post-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-thumbnail img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.post-title {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+    text-transform: capitalize;
+}
+
+.post-excerpt {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+.three-section-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.section-item {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center align, adjust as needed */
-    padding: 20px 0;
+    gap: 15px;
+    flex: 1;
+    border-radius: 8px;
+    padding: 15px;
 }
 
-/* Custom Logo */
-.site-logo img {
-    max-height: 100px; /* Adjust as needed */
-    height: auto;
-    width: auto;
+.section-item i {
+    font-size: 36px;
+    color: #0073aa;
+    flex-shrink: 0; /* Prevent icon from resizing */
+    align-self: center;
 }
 
-/* Site Title and Description */
-.site-title-description {
-    text-align: center; /* Adjust alignment as needed */
-    margin-left: 15px; /* Space between logo and text */
+.section-item .text-content {
+    display: flex;
+    flex-direction: column; /* Title above description */
+    justify-content: center;
 }
 
-.site-title {
+.section-item h3 {
+    font-size: 18px;
+    margin: 0 0 5px; /* Add space below title */
+}
+
+.section-item p {
+    margin: 0;
+    color: #666;
+}
+
+
+#maghreb-six-section {
+    background: var(--warm-beige);
+    margin: 80px -45px;
+    padding: 20px;
+}
+
+#maghreb-six-section .six-header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+
+
+
+
+.review-widget-area {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* For smooth scrolling */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.review-widget {
+    min-width: 200px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: grab; /* Pointer changes to indicate draggable */
+    transition: transform 0.3s ease; /* Smooth animation for dragging */
+}
+
+.review-widget:active {
+    cursor: grabbing;
+    transform: scale(1.05); /* Slightly enlarge on drag */
+}
+
+
+
+
+
+
+/* General Header Styling */
+.site-header {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between logo and navigation */
+    align-items: center; /* Align items vertically center */
+}
+
+/* Branding (Logo or Site Name) */
+.site-branding {
+    float: left; /* Optional: For fallback compatibility */
+}
+
+.site-branding .site-title {
     font-size: 24px;
     margin: 0;
+    font-weight: bold;
 }
 
-.site-description {
-    font-size: 14px;
-    color: #666;
+.site-branding .site-title a {
+    text-decoration: none;
+}
+
+/* Navigation Menu */
+.main-navigation {
+    float: right; /* Optional: For fallback compatibility */
+}
+
+.main-navigation .menu {
+    display: flex; /* Flexbox for horizontal menu */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation .menu li {
+    margin-left: 20px; /* Space between menu items */
+}
+
+.main-navigation .menu a {
+    text-decoration: none;
+    color: #333; /* Adjust menu text color */
+}
+
+.main-navigation .menu a:hover {
+}
+
+.menu-toggle {
+    display: none; /* Hide the toggle button for larger screens */
+}
+
+.menu-main-menu-container {
+    float: right;
 }
