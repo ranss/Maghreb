@@ -7,6 +7,10 @@
  * @package Bidaya
  */
 
+ if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 if ( ! function_exists( 'bidaya_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.

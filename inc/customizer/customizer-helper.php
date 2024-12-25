@@ -1,11 +1,10 @@
-<?php
+<?php 
 /**
- * Load necessary Customizer controls and functions.
  *
  * @package Bidaya
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 

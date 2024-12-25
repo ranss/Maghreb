@@ -2,6 +2,10 @@
 /**
  * The template for displaying search forms in the Bidaya theme
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
     <label>

@@ -1,5 +1,12 @@
-<?php
+<?php 
+/**
+ *
+ * @package Bidaya
+ */
 
+ if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 function bidaya_hero_title( $wp_customize ) {
     
     $wp_customize->add_setting('hero_title', array(

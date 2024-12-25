@@ -1,4 +1,12 @@
 <?php 
+/**
+ *
+ * @package Bidaya
+ */
+
+ if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 
 if (class_exists('WP_Customize_Control')) {
     class Icon_Picker_Custom_Control extends WP_Customize_Control {

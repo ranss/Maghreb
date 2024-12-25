@@ -1,6 +1,9 @@
-<?php
- /**
-  * Bidaya Theme Customizer
-  *
-  * @package Bidaya
-  */
+<?php 
+/**
+ *
+ * @package Bidaya
+ */
+
+ if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}

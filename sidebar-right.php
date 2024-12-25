@@ -7,6 +7,10 @@
  * @package Bidaya
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 if ( ! is_active_sidebar( 'bidaya-right-sidebar' ) ) {
 	echo "<h4>There is no widgets yet!</h4>";
 }

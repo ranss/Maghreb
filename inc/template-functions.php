@@ -5,6 +5,10 @@
  * @package Bidaya
  */
 
+ if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Adds custom classes to the array of body classes.
  *
